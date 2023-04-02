@@ -21,26 +21,20 @@ namespace BankingAppWPFA
 
         private void logInButton_Click(object sender, EventArgs e)
         {
-            // Load the user data from the file
-            List<UserModel> users = TextConnectorProcessor.FullFilePath("users.csv").LoadFile().ConvertToUserModel();
+            UserModel user = GlobalConfig.connection.Login(usernameTextbox.Text, passwordTextbox.Text);
 
-            // Get the username and password from the input fields
-            string username = usernameTextbox.Text;
-            string password = passwordTextbox.Text;
-
-            // Find the user with matching credentials
-            UserModel user = users.FirstOrDefault(u => u.UserName == username && u.Password == password);
-
-            // If a user is found, display a welcome message and close the form
             if (user != null)
             {
-                MessageBox.Show($"Welcome back, {user.FirstName} {user.LastName}!");
-                this.Close();
+                MessageBox.Show("Login Successful");
+
+                Menu menu = new Menu();
+                menu.Show();
             }
-            // Otherwise, display an error message
             else
             {
-                MessageBox.Show("Invalid username or password. Please try again.");
+                // Display an error message indicating invalid login credentials
+                MessageBox.Show("Login failed");
+
             }
         }
         private void signUp_Click(object sender, EventArgs e)
@@ -49,5 +43,6 @@ namespace BankingAppWPFA
 
             signup.Show();
         }
+
     }
 }

@@ -24,6 +24,8 @@ namespace BankingLibrary
             }
             user.Id = currentId;
 
+            user.Money = 1000;
+
             users.Add(user);
 
             users.SaveToUserFile(UserFile);
@@ -31,7 +33,24 @@ namespace BankingLibrary
             return user;
         }
 
-       
+        public UserModel Login(string username, string password)
+        {
+            List<UserModel> users = UserFile.FullFilePath().LoadFile().ConvertToUserModel();
+
+            UserModel user = users.FirstOrDefault(u => u.UserName == username && u.Password == password);
+
+            return user;
+        }
+
+        public int CheckBalance(UserModel user)
+        {
+            List<UserModel> users = UserFile.FullFilePath().LoadFile().ConvertToUserModel();
+
+
+            return user.Money = 1000;
+        }
+
+
     }
 
 }

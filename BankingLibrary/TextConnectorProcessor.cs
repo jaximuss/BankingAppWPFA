@@ -36,11 +36,13 @@ namespace BankingLibrary
 
                 UserModel model = new UserModel();
                 model.Id = int.Parse(cols[0]);
-                model.UserName = cols[1];
-                model.Password = cols[2];
-                model.FirstName = cols[3];
-                model.LastName = cols[4];
-                model.EmailAddress = cols[5]; 
+                model.FirstName = cols[1];
+                model.LastName = cols[2];
+                model.EmailAddress = cols[3];
+                model.Password = cols[4];
+                model.UserName = cols[5];
+                //model.Money = int.Parse(cols[6]);
+
                 output.Add(model);
             }
             return output ;
@@ -52,7 +54,7 @@ namespace BankingLibrary
 
             foreach (var p in models)
             {
-                lines.Add($"{ p.Id},{p.FirstName},{p.LastName},{p.EmailAddress},{p.Password},{p.UserName}" );
+                lines.Add($"{ p.Id},{p.FirstName},{p.LastName},{p.EmailAddress},{p.Password},{p.UserName},${p.Money}" );
             }
             File.WriteAllLines(fileName.FullFilePath(), lines) ;
         }

@@ -16,7 +16,8 @@ namespace BankingLibrary
         /// <returns></returns>
 
         UserModel CreateUser(UserModel model);
+         UserModel Login(string username, string password);
 
-
+        int CheckBalance(UserModel user);
     }
 }

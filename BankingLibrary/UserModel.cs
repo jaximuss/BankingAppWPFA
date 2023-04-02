@@ -15,6 +15,8 @@ namespace BankingLibrary
         public string Password { get; set; }
         public string UserName { get; set; }
 
+        public int Money { get; set; }
+
         public UserModel() { }
 
         public UserModel(string firstName, string lastName, string emailAddress, string password, string username)
