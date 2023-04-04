@@ -1,4 +1,5 @@
 ﻿using BankingLibrary;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +14,43 @@ namespace BankingAppWPFA
 {
     public partial class Menu : Form
     {
-        public Menu()
+        public UserModel userModel;
+
+        public Menu(UserModel user)
         {
+            userModel = user;
             InitializeComponent();
         }
 
         private void balanceButton_Click(object sender, EventArgs e)
         {
-            UserModel user = new UserModel();
-            MessageBox.Show("Your balance is: " + GlobalConfig.connection.CheckBalance(user));
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accountMenuNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void depositButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{userModel.Money}");
+        }
+
+        private void Menu_Load_1(object sender, EventArgs e)
+        {
+            accountMenuNameLabel.Text = userModel.UserName;
+            balanceMenuNameLabel.Text = userModel.Money.ToString("C");
         }
     }
 }

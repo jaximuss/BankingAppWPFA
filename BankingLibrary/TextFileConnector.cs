@@ -46,8 +46,14 @@ namespace BankingLibrary
         {
             List<UserModel> users = UserFile.FullFilePath().LoadFile().ConvertToUserModel();
 
+            UserModel currentUser = users.FirstOrDefault(u => u.Id == user.Id);
 
-            return user.Money = 1000;
+            if (currentUser == null)
+            {
+                throw new Exception($"User with id {user.Id} not found");
+            }
+
+            return currentUser.Money;
         }
 
 

@@ -4,6 +4,7 @@ namespace BankingAppWPFA
 {
     public partial class Form1 : Form
     {
+        UserModel user;
         public Form1()
         {
             InitializeComponent();
@@ -21,14 +22,15 @@ namespace BankingAppWPFA
 
         private void logInButton_Click(object sender, EventArgs e)
         {
-            UserModel user = GlobalConfig.connection.Login(usernameTextbox.Text, passwordTextbox.Text);
+            user = GlobalConfig.connection.Login(usernameTextbox.Text, passwordTextbox.Text);
 
             if (user != null)
             {
                 MessageBox.Show("Login Successful");
 
-                Menu menu = new Menu();
+                Menu menu = new Menu(user); // pass the user object to the menu form
                 menu.Show();
+                this.Hide();
             }
             else
             {
@@ -44,5 +46,9 @@ namespace BankingAppWPFA
             signup.Show();
         }
 
+        private void PasswordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

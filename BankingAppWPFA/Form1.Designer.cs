@@ -55,6 +55,7 @@
             PasswordLabel.Size = new Size(57, 15);
             PasswordLabel.TabIndex = 1;
             PasswordLabel.Text = "Password";
+            PasswordLabel.Click += PasswordLabel_Click;
             // 
             // usernameTextbox
             // 

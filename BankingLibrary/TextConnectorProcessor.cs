@@ -41,7 +41,8 @@ namespace BankingLibrary
                 model.EmailAddress = cols[3];
                 model.Password = cols[4];
                 model.UserName = cols[5];
-                //model.Money = int.Parse(cols[6]);
+                model.Money = int.Parse(cols[6]);
+                
 
                 output.Add(model);
             }
@@ -54,7 +55,7 @@ namespace BankingLibrary
 
             foreach (var p in models)
             {
-                lines.Add($"{ p.Id},{p.FirstName},{p.LastName},{p.EmailAddress},{p.Password},{p.UserName},${p.Money}" );
+                lines.Add($"{ p.Id},{p.FirstName},{p.LastName},{p.EmailAddress},{p.Password},{p.UserName},{p.Money}" );
             }
             File.WriteAllLines(fileName.FullFilePath(), lines) ;
         }

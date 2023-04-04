@@ -29,33 +29,28 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            depositButton = new Button();
             traansferButton = new Button();
             topUpButton = new Button();
-            balanceButton = new Button();
+            WelcomeLabel = new Label();
+            accountMenuNameLabel = new Label();
+            BalanceLabel = new Label();
+            balanceMenuNameLabel = new Label();
+            label6 = new Label();
+            depositButton = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.Font = new Font("Perpetua Titling MT", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(184, 9);
+            label1.Location = new Point(183, 9);
             label1.Name = "label1";
             label1.Size = new Size(390, 64);
             label1.TabIndex = 0;
             label1.Text = "MONARCH BANK";
             // 
-            // depositButton
-            // 
-            depositButton.Location = new Point(452, 169);
-            depositButton.Name = "depositButton";
-            depositButton.Size = new Size(153, 131);
-            depositButton.TabIndex = 1;
-            depositButton.Text = "DEPOSIT";
-            depositButton.UseVisualStyleBackColor = true;
-            // 
             // traansferButton
             // 
-            traansferButton.Location = new Point(155, 169);
+            traansferButton.Location = new Point(62, 369);
             traansferButton.Name = "traansferButton";
             traansferButton.Size = new Size(153, 131);
             traansferButton.TabIndex = 2;
@@ -64,45 +59,100 @@
             // 
             // topUpButton
             // 
-            topUpButton.Location = new Point(155, 384);
+            topUpButton.Location = new Point(295, 369);
             topUpButton.Name = "topUpButton";
             topUpButton.Size = new Size(153, 131);
             topUpButton.TabIndex = 3;
             topUpButton.Text = "MOBILE TOP-UP";
             topUpButton.UseVisualStyleBackColor = true;
             // 
-            // balanceButton
+            // WelcomeLabel
             // 
-            balanceButton.Location = new Point(452, 384);
-            balanceButton.Name = "balanceButton";
-            balanceButton.Size = new Size(153, 131);
-            balanceButton.TabIndex = 4;
-            balanceButton.Text = "CHECK BALANCE";
-            balanceButton.UseVisualStyleBackColor = true;
-            balanceButton.Click += balanceButton_Click;
+            WelcomeLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            WelcomeLabel.Location = new Point(62, 92);
+            WelcomeLabel.Name = "WelcomeLabel";
+            WelcomeLabel.Size = new Size(168, 45);
+            WelcomeLabel.TabIndex = 5;
+            WelcomeLabel.Text = "Welcome";
+            // 
+            // accountMenuNameLabel
+            // 
+            accountMenuNameLabel.Location = new Point(295, 92);
+            accountMenuNameLabel.Name = "accountMenuNameLabel";
+            accountMenuNameLabel.Size = new Size(294, 31);
+            accountMenuNameLabel.TabIndex = 6;
+            accountMenuNameLabel.Text = "accountMenuName";
+            accountMenuNameLabel.Click += accountMenuNameLabel_Click;
+            // 
+            // BalanceLabel
+            // 
+            BalanceLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BalanceLabel.Location = new Point(62, 142);
+            BalanceLabel.Name = "BalanceLabel";
+            BalanceLabel.Size = new Size(168, 45);
+            BalanceLabel.TabIndex = 7;
+            BalanceLabel.Text = "Balance";
+            BalanceLabel.Click += label4_Click;
+            // 
+            // balanceMenuNameLabel
+            // 
+            balanceMenuNameLabel.Location = new Point(295, 154);
+            balanceMenuNameLabel.Name = "balanceMenuNameLabel";
+            balanceMenuNameLabel.Size = new Size(168, 45);
+            balanceMenuNameLabel.TabIndex = 8;
+            balanceMenuNameLabel.Text = "balanceMenuName";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(128, 58);
+            label6.Name = "label6";
+            label6.Size = new Size(0, 15);
+            label6.TabIndex = 9;
+            label6.Click += label6_Click;
+            // 
+            // depositButton
+            // 
+            depositButton.Location = new Point(519, 369);
+            depositButton.Name = "depositButton";
+            depositButton.Size = new Size(153, 131);
+            depositButton.TabIndex = 1;
+            depositButton.Text = "DEPOSIT";
+            depositButton.UseVisualStyleBackColor = true;
+            depositButton.Click += depositButton_Click;
             // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(752, 679);
-            Controls.Add(balanceButton);
+            ClientSize = new Size(746, 611);
+            Controls.Add(label6);
+            Controls.Add(balanceMenuNameLabel);
+            Controls.Add(BalanceLabel);
+            Controls.Add(accountMenuNameLabel);
+            Controls.Add(WelcomeLabel);
             Controls.Add(topUpButton);
             Controls.Add(traansferButton);
             Controls.Add(depositButton);
             Controls.Add(label1);
             Name = "Menu";
             Text = "Menu";
+            Load += Menu_Load_1;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
-        private Button depositButton;
         private Button traansferButton;
         private Button topUpButton;
-        private Button balanceButton;
+        private Label WelcomeLabel;
+        private Label accountMenuNameLabel;
+        private Label BalanceLabel;
+        private Label balanceMenuNameLabel;
+        private Label label6;
+        private Button depositButton;
     }
 }

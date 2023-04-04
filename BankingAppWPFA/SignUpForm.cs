@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace BankingAppWPFA
 {
+    
     public partial class SignUpForm : Form
     {
         public SignUpForm()
