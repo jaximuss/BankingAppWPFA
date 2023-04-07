@@ -14,6 +14,7 @@ namespace BankingAppWPFA
 {
     public partial class Menu : Form
     {
+
         public UserModel userModel;
 
         public Menu(UserModel user)
@@ -44,13 +45,21 @@ namespace BankingAppWPFA
 
         private void depositButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{userModel.Money}");
+            DepositForm depositForm = new DepositForm();
+
+            depositForm.Show();
         }
 
         private void Menu_Load_1(object sender, EventArgs e)
         {
             accountMenuNameLabel.Text = userModel.UserName;
             balanceMenuNameLabel.Text = userModel.Money.ToString("C");
+        }
+
+        private void traansferButton_Click(object sender, EventArgs e)
+        {
+            TransferForm transferForm = new TransferForm();
+            transferForm.Show();
         }
     }
 }

@@ -30,7 +30,6 @@
         {
             label1 = new Label();
             traansferButton = new Button();
-            topUpButton = new Button();
             WelcomeLabel = new Label();
             accountMenuNameLabel = new Label();
             BalanceLabel = new Label();
@@ -42,7 +41,7 @@
             // label1
             // 
             label1.Font = new Font("Perpetua Titling MT", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(183, 9);
+            label1.Location = new Point(134, 9);
             label1.Name = "label1";
             label1.Size = new Size(390, 64);
             label1.TabIndex = 0;
@@ -50,21 +49,13 @@
             // 
             // traansferButton
             // 
-            traansferButton.Location = new Point(62, 369);
+            traansferButton.Location = new Point(77, 369);
             traansferButton.Name = "traansferButton";
             traansferButton.Size = new Size(153, 131);
             traansferButton.TabIndex = 2;
             traansferButton.Text = "TRANSFER";
             traansferButton.UseVisualStyleBackColor = true;
-            // 
-            // topUpButton
-            // 
-            topUpButton.Location = new Point(295, 369);
-            topUpButton.Name = "topUpButton";
-            topUpButton.Size = new Size(153, 131);
-            topUpButton.TabIndex = 3;
-            topUpButton.Text = "MOBILE TOP-UP";
-            topUpButton.UseVisualStyleBackColor = true;
+            traansferButton.Click += traansferButton_Click;
             // 
             // WelcomeLabel
             // 
@@ -77,6 +68,7 @@
             // 
             // accountMenuNameLabel
             // 
+            accountMenuNameLabel.Font = new Font("Arial Rounded MT Bold", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
             accountMenuNameLabel.Location = new Point(295, 92);
             accountMenuNameLabel.Name = "accountMenuNameLabel";
             accountMenuNameLabel.Size = new Size(294, 31);
@@ -87,7 +79,7 @@
             // BalanceLabel
             // 
             BalanceLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BalanceLabel.Location = new Point(62, 142);
+            BalanceLabel.Location = new Point(62, 179);
             BalanceLabel.Name = "BalanceLabel";
             BalanceLabel.Size = new Size(168, 45);
             BalanceLabel.TabIndex = 7;
@@ -96,7 +88,8 @@
             // 
             // balanceMenuNameLabel
             // 
-            balanceMenuNameLabel.Location = new Point(295, 154);
+            balanceMenuNameLabel.Font = new Font("Arial Rounded MT Bold", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
+            balanceMenuNameLabel.Location = new Point(295, 179);
             balanceMenuNameLabel.Name = "balanceMenuNameLabel";
             balanceMenuNameLabel.Size = new Size(168, 45);
             balanceMenuNameLabel.TabIndex = 8;
@@ -113,7 +106,7 @@
             // 
             // depositButton
             // 
-            depositButton.Location = new Point(519, 369);
+            depositButton.Location = new Point(387, 369);
             depositButton.Name = "depositButton";
             depositButton.Size = new Size(153, 131);
             depositButton.TabIndex = 1;
@@ -126,13 +119,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(746, 611);
+            ClientSize = new Size(664, 623);
             Controls.Add(label6);
             Controls.Add(balanceMenuNameLabel);
             Controls.Add(BalanceLabel);
             Controls.Add(accountMenuNameLabel);
             Controls.Add(WelcomeLabel);
-            Controls.Add(topUpButton);
             Controls.Add(traansferButton);
             Controls.Add(depositButton);
             Controls.Add(label1);
@@ -147,7 +139,6 @@
 
         private Label label1;
         private Button traansferButton;
-        private Button topUpButton;
         private Label WelcomeLabel;
         private Label accountMenuNameLabel;
         private Label BalanceLabel;
