@@ -36,7 +36,7 @@
             // AmountDepositLabel
             // 
             AmountDepositLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            AmountDepositLabel.Location = new Point(43, 77);
+            AmountDepositLabel.Location = new Point(44, 90);
             AmountDepositLabel.Name = "AmountDepositLabel";
             AmountDepositLabel.Size = new Size(108, 20);
             AmountDepositLabel.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // DepositTextbox
             // 
-            DepositTextbox.Location = new Point(185, 74);
+            DepositTextbox.Location = new Point(185, 90);
             DepositTextbox.Name = "DepositTextbox";
             DepositTextbox.Size = new Size(215, 23);
             DepositTextbox.TabIndex = 1;

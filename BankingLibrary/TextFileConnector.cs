@@ -25,7 +25,6 @@ namespace BankingLibrary
         public UserModel CreateUser(UserModel user)
         {
            List<UserModel> users =  UserFile.FullFilePath().LoadFile().ConvertToUserModel();
-    
             int currentId = 1;
 
             if (users.Count >0)
@@ -48,6 +47,7 @@ namespace BankingLibrary
             List<UserModel> users = UserFile.FullFilePath().LoadFile().ConvertToUserModel();
 
             UserModel user = users.FirstOrDefault(u => u.UserName == username && u.Password == password);
+            
 
             return user;
         }

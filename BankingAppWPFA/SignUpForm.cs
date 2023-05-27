@@ -30,6 +30,13 @@ namespace BankingAppWPFA
            
             GlobalConfig.connection.CreateUser(userModel);
 
+
+            firstNameTextbox.Text = "";
+            LastNameTextbox.Text = "";
+            emailTextbox.Text = "";
+            passwordTextbox.Text = "";
+            usernameTextBox.Text = "";
+
         }
     }
 }

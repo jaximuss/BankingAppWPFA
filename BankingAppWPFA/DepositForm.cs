@@ -26,7 +26,9 @@ namespace BankingAppWPFA
 
         private void DepositButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(userModel.FirstName);
         }
+
 
         private void DepositTextbox_TextChanged(object sender, EventArgs e)
         {
